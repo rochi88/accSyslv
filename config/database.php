@@ -1,8 +1,8 @@
+$DATABASE_URL=parse_url(‘DATABASE_URL’);
 <?php
 
 use Illuminate\Support\Str;
 
-$DATABASE_URL=parse_url(‘DATABASE_URL’);
 
 return [
 
@@ -67,12 +67,12 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
-            //'url' => env('DATABASE_URL'),
-            //'host' => env('DB_HOST', '127.0.0.1'),
+            //'url' => env('postgres://tupmmwkzprshka:c5c91bb4db68d91487705f13e87deb44900b7f32e3c6c6b7e983ef6b13d5aaf6@ec2-52-200-134-180.compute-1.amazonaws.com:5432/d2e9a8njif6377'),
+            //'host' => env('DB_HOST', 'ec2-52-200-134-180.compute-1.amazonaws.com'),
             //'port' => env('DB_PORT', '5432'),
-            //'database' => env('DB_DATABASE', 'forge'),
-            //'username' => env('DB_USERNAME', 'forge'),
-            //'password' => env('DB_PASSWORD', ''),
+            //'database' => env('DB_DATABASE', 'd2e9a8njif6377'),
+            //'username' => env('DB_USERNAME', 'tupmmwkzprshka'),
+            //'password' => env('DB_PASSWORD', 'c5c91bb4db68d91487705f13e87deb44900b7f32e3c6c6b7e983ef6b13d5aaf6'),
 			'host' => $DATABASE_URL["host"],
 			'port' => $DATABASE_URL["port"],
 			'database' => ltrim($DATABASE_URL["path"],"/"),
